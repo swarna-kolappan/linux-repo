@@ -1,11 +1,11 @@
 #!/bin/bash
-tomcat=true
-apacheserver=true
-Java8=true
-dotnetcore=true
-MYsql=true
-python_i=true
-php=true
+tomcat=false
+apacheserver=false
+Java8=false
+dotnetcore=false
+MYsql=false
+python_i=false
+php=false
 if [ $tomcat = "true" ]; then
  sudo yum install tomcat
  sudo systemctl start tomcat
@@ -42,7 +42,6 @@ if [ $dotnetcore = "true" ]; then
  sudo rm -f /var/run/yum.pid
 fi
 
-
 if [ $MYsql = "true" ]; then
  sudo yum install mariadb-server
  sudo systemctl start mariadb
@@ -52,13 +51,11 @@ if [ $MYsql = "true" ]; then
  sudo rm -f /var/run/yum.pid
 fi
 
-
 if [ $Java8 = "true" ]; then
  sudo yum install java-1.8.0-openjdk
  java -version
  sudo rm -f /var/run/yum.pid
 fi
-
 
 if [ $php = "true" ]; then
  sudo yum install php php-mysql
